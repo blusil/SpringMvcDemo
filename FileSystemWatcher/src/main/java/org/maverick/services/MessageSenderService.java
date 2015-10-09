@@ -1,19 +1,26 @@
 package org.maverick.services;
 
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
+import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Stateless
-@LocalBean
+@Startup
+@Singleton
 public class MessageSenderService {
 
     private static final Logger LOG = LogManager.getLogger(MessageSenderService.class);
     
-    public void SendMessage() {
-    	LOG.info("This is a test message");
+    @EJB
+    private MessageSenderBean msgSender;
+    
+    @PostConstruct
+    public void init() {
+    	LOG.info("Injecting and calling MessageSenderBean class");
+    	msgSender.SendMessage();
     }
 
 }
