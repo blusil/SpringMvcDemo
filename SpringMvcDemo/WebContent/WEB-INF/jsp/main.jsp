@@ -9,10 +9,11 @@
 </head>
 <body ng-controller="moviesController">
 	<div class="navbar navbar-inverse">
-		<div class="navbar-inner">
+		<div class="navbar-header">
 			<div class="container">
-				<a class="brand" href="*">${greeting}</a>
-				<ul class="nav">
+				<a class="navbar-brand" href="*">${greeting}</a>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -31,7 +32,7 @@
 
 
 		<div ng-repeat="movie in movies | orderBy:'title' ">
-			<div class="col-md-4 col-lg-4">
+			<div class="col-md-4">
 				<a href="#movieDetails/{{movie.id}}">
 					<div class="thumbnail">
 						<img ng-src="{{movie.imageUrl}}" alt="{{movie.imageUrl}}"
