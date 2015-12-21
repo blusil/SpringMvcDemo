@@ -12,6 +12,7 @@
 	<mvc:default-servlet-handler/>	
 	
 	<context:component-scan base-package="org.maverick.controller"/>
+	<context:component-scan base-package="org.maverick.service"/>
 	
 	<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"/>
 
