@@ -3,6 +3,9 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_generated"/>
         <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <dependent-module archiveName="logging-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/logging/logging">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="SpringMvcDemo"/>
         <property name="java-output-path" value="/SpringMvcDemo/WebContent/WEB-INF/classes"/>
     </wb-module>
